@@ -5,7 +5,7 @@
     var bodyParser = require('body-parser')
     var env        = require('dotenv').load()
     var exphbs     = require('express-handlebars')
-
+    var port = process.env.PORT || 8080;
 
 
     //For BodyParser
@@ -55,11 +55,16 @@
 
 
 
-	app.listen(8080, function(err){
-		if(!err)
-		console.log("Site is live"); else console.log(err)
+	// app.listen(8080, function(err){
+	// 	if(!err)
+	// 	console.log("Site is live"); else console.log(err)
 
-	});
+    // });
+    
+
+app.listen(port, function() {
+    console.log("App is running on port " + port);
+});
 
 
 
