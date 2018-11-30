@@ -28,7 +28,7 @@
     app.use(express.static("public"));
     
 
-    app.get('signin', function(req, res){
+    app.get('/', function(req, res){
 	  res.send('Welcome to Passport with Sequelize');
 	});
 
