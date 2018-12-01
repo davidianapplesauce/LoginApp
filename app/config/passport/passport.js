@@ -1,5 +1,5 @@
 
-  //load bcrypt
+  //loads bcrypt
   var bCrypt = require('bcrypt-nodejs');
 
   module.exports = function(passport,user){
@@ -11,7 +11,6 @@
   passport.serializeUser(function(user, done) {
           done(null, user.id);
       });
-
 
   // used to deserialize the user
   passport.deserializeUser(function(id, done) {
@@ -26,13 +25,12 @@
 
   });
 
-
   passport.use('local-signup', new LocalStrategy(
 
     {           
       usernameField : 'email',
       passwordField : 'password',
-      passReqToCallback : true // allows us to pass back the entire request to the callback
+      passReqToCallback : true // passes back the entire request to the callback
     },
 
     function(req, email, password, done){
